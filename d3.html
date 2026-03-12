@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- addition  -->
+    <script>
+    let sum = 0;
+    for(let i = 1;i <= 50;i++){
+        sum += i;
+    }
+    console.log("the sum of 1 to 50 number is:",sum)
+
+// multiplication table
+console.log("*******************************************");
+let num = prompt("Enter the number:");
+for( let i = 1; i <= 10; i++) {
+  console.log(num * i);
+}
+// even number
+console.log("*******************************************");
+
+let even = Number(prompt("Enter the Numbers:"));
+let count = 0;
+for(let i = 1; i <= even ; i++) {
+    if(i % 2 === 0){
+       count++;
+}
+    }
+   
+    console.log("Even number count:",count);
+    
+    // factorial
+console.log("*******************************************");
+    let number = prompt("Enter the Number");
+    fact = 1;
+    for(let i = 1; i<= number; i++){
+        fact = fact * i;
+
+    }
+    console.log("factoriall is:",fact);
+
+    // countdown
+console.log("*******************************************");
+
+let nav = prompt("Enter the number:");
+for( let i = 1; i <= nav; i++){
+    console.log(i);
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <style>
+
+    body{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+  #container{
+  height: 400px;
+  width: 400px;
+  border:solid black 1px;
+  border-radius: 10px;
+  align-content: center;
+
+  h1{
+    text-align: center;
+    font-size:30px;
+
+  }
+ 
+}
+
+.op-div{
+  padding: 10px;
+  
+
+ 
+}
+#op-display{
+  width: 90%;
+  height: 30px;
+  padding-left: 30px;
+  font-size: larger;
+  
+  
+}
+
+#ip1 ,#ip2{
+  height: 25px;
+  margin:5px;
+  margin-left: 11px;
+
+
+}
+.button-div{
+  
+  justify-content: center;
+  display:flex;
+  flex-flow: column wrap;
+  align-content: center;
+  justify-content: center;
+  padding-top: 20px;
+  
+  button{
+    width: 80%;
+    padding: 8px;
+    margin: 5px;
+    background-color: rgb(238, 105, 114);
+    font-weight: bolder;
+  }
+
+  
+}
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h1>Calculator</h1>
+    <div class="op-div">
+      <input type="number" readonly id="op-display" placeholder="Result">
+    </div>
+    <div class="input-div">
+      <input type="number" id="ip1" placeholder="Enter Number">
+      <input type="number" id="ip2" placeholder="Enter Number">
+
+      <div class="button-div">
+        <button onclick="calculate('add')">Addition</button>
+        <button onclick="calculate ('sub')">Subtraction</button>
+        <button onclick="calculate ('mul')">Multiplication</button>
+        <button onclick="calculate ('div')">Division</button>
+      </div>
+    </div>
+
+  </div>
+  <script>
+
+function calculate(operation) {
+
+ let n1 = Number(document.getElementById("ip1").value);
+
+ let n2 = Number(document.getElementById("ip2").value);
+
+ let result;
+ 
+ switch(operation) {
+
+  case "add" :
+    result = n1 + n2;
+    break;
+
+    case "sub" :
+    result = n1 - n2;
+    break;
+
+    case "mul" :
+    result = n1 * n2;
+    break;
+
+    case "div" :
+    result = n1 / n2;
+    break;
+
+    default:
+      result = "invalid";
+ }
+
+ document.getElementById("op-display").value = result;
+}
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+     .form-div{
+    height: 250px;
+    width: 300px;
+    border:2px solid black;
+    padding: 10px;
+    display:flex;
+    justify-items: center;
+    flex-flow:column wrap;
+    justify-content: center;
+    align-items: center; 
+    /* position:relative;
+    top:200px;
+    Left:300px */
+  }
+  .form-div input{
+    margin:10px;
+  }
+  #result{
+    
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+  }
+
+  body{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    height: 100vh;
+    align-items: center;
+  }
+
+  #label1{
+    visibility:visible;
+  }
+
+  </style>
+</head>
+<body>
+  <div class="form-div" >
+    <label for="label1" >Enter Name</label>
+    <input type="text" id="nameIp" onkeyup = "resultData()"  style="height:25px;width:250px;"/>
+    <!-- <input type="submit" id="submit" onclick="changeColor()"/> -->
+    <h1 id="result"  >Hello My Name is</h1>
+  </div>
+  <script>
+    const input=document.getElementById('nameIp');
+    const optxt=document.getElementById('result');
+
+    function resultData(){
+      let data=input.value;
+      optxt.innerHTML=`Hello my name is ${data}`
+      console.log(data, data.length)
+       
+
+      if(data.length>=8){
+        document.querySelector('body').style.backgroundColor='green'
+      }else if(data.length>=6){
+        document.querySelector('body').style.backgroundColor='red';
+      }else if(data.length>=4 && data.length<6){
+        document.querySelector('body').style.backgroundColor='yellow';
+        console.log("Yellow")
+      }else{
+        document.querySelector('body').style.backgroundColor='lightpink';
+      }
+    }
+
+     
+  </script>
+</body>
+</html>

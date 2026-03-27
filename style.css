@@ -1,6 +1,6 @@
 .card-img-top {
   height: 300px;   
-  object-fit: cover;   
+     
 }
 
 
@@ -8,6 +8,19 @@ body {
     font-family: 'Arial', sans-serif;
     background-color:lightgray;
    
+}
+
+.carousel-item img {
+  height: 600px;
+  object-fit: cover;
+  border-radius: 10px;
+  padding: 50px;
+}
+
+.carousel-caption {
+  background: rgba(0,0,0,0.5);
+  padding: 10px;
+  border-radius: 10px;
 }
 
 

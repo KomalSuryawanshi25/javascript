@@ -2,10 +2,10 @@
 
 const products = [
   {id: 1,
-    name:"Smartphone",
+    name:"Samsung Galaxy S26 Ultra",
     price:35000,
     category:"electronics",
-    image:"https://tse4.mm.bing.net/th/id/OIP.c3rRJGHAsnnAmVHt0wj-tgHaEK?rs=1&pid=ImgDetMain&o=7&rm=3" 
+    image:"https://www.geeky-gadgets.com/wp-content/uploads/2025/11/samsung-galaxy-s26-ultra-design-upgrade_optimized.jpg" 
     
 
   },
@@ -92,32 +92,110 @@ const products = [
     price:3000,
     image:"https://editrepublic.com/wp-content/uploads/2023/06/Self-Improvement-Books-2022-Post.jpg"}, 
 
-  {id: 15,
+
+    {id: 15,
+    name:"Atomic Habits",
+    category:"books",
+    price:250,
+    image:"https://m.media-amazon.com/images/I/81F90H7hnML.jpg"},
+
+  {id: 16,
     name:"Tops",
     category:"fashion",
     price:1200,
     image:"https://assets.myntassets.com/h_200,w_200,c_fill,g_auto/h_1440,q_100,w_1080/v1/assets/images/29726008/2024/5/23/a5c2bbe8-1677-447f-9dc9-698ade6540ad1716443543531KALINIPrintEthnicCottonTieredTop1.jpg"},
 
-  {id: 16,
+  {id: 17,
     name:"Decore",
     category:"home",
     price:8000,
     image:"https://img.houseui.com/media/blog-thumbnail/Wall_Decor_Ideas.jpg/"},
     
-    {id:17,
+    {id:18,
       name:"Golden Hour Combo ",
       category:"beauty",
       price:6000,
       image:"https://th.bing.com/th/id/R.dc2bc5792cc1429a6e49a88e8e30817e?rik=HP3%2fXlM5AalgDA&riu=http%3a%2f%2fgoldenhourbotanicals.com%2fcdn%2fshop%2fcollections%2fGoldenhour_Lifestyle_Collection_Hi-Res_008.jpg%3fv%3d1674253511&ehk=oTFncUQc282a8Bt8vDCX1z%2fqf1lCxrQddCWH%2bxjJRJQ%3d&risl=&pid=ImgRaw&r=0"
-    }
+    },
 
-    {id:18,
+    {id:19,
       name:"Dot & key Combo ",
       category:"beauty",
       price:1485,
     image:"https://www.dotandkey.com/cdn/shop/files/2_0610d2be-ad52-401e-a398-4369ebd33852.jpg?v=1710313688"
-   }
+   },
+
+
+   {id: 20,
+    name:"Teddy Bear",
+    category:"toys",
+    price:850,
+    image:"https://tse3.mm.bing.net/th/id/OIP.iIOzMK-pZ5ricXtDF6Z4iwHaIq?w=2020&h=2364&rs=1&pid=ImgDetMain&o=7&rm=3"},
+
+    {id: 21,
+    name:"Building Blocks",
+    category:"toys",
+    price:850,
+    image:"https://tse4.mm.bing.net/th/id/OIP.9VJuwchsluuMczXTeYWfjQHaHa?w=1500&h=1500&rs=1&pid=ImgDetMain&o=7&rm=3"},
+
+
+     {id: 22,
+    name:"Realme Earbuds",
+    category:"electronics",
+    price:3560,
+
+    image:"https://m.media-amazon.com/images/I/61kDfm8FD7L.jpg"},
+
+
+
+ {id: 23,
+    name:"Pink Lehenga",
+    category:"fashion",
+    price:6850,
+    image:"https://tse4.mm.bing.net/th/id/OIP.aXDD7OSSe0sJA2hDOpPbSwHaKf?pid=ImgDet&w=187&h=265&c=7&dpr=1.3&o=7&rm=3"
+ },
+
+ {id: 24,
+    name:"Wall Decore",
+    category:"home",
+    price:6850,
+    image:"https://www.urbanwood.in/image/cache/catalog/decor/jordan/teak/1-1920x1340.jpg"
+ },
+
 ];
+
+
+
+function goToBeauty() {
+  categoryFilter.value = "beauty";
+  const beautyProducts = products.filter(p => p.category === "beauty");
+   displayProducts(beautyProducts);
+     document.getElementById("productList").scrollIntoView({
+    behavior: "smooth"
+  });
+}
+
+
+function goToFashion() {
+  categoryFilter.value = "fashion";
+  const beautyProducts = products.filter(p => p.category === "fashion");
+   displayProducts(beautyProducts);
+     document.getElementById("productList").scrollIntoView({
+    behavior: "smooth"
+  });
+}
+
+
+function goToBooks() {
+  categoryFilter.value = "books";
+  const beautyProducts = products.filter(p => p.category === "books");
+   displayProducts(beautyProducts);
+     document.getElementById("productList").scrollIntoView({
+    behavior: "smooth"
+  });
+}
+
+
 
 
 
@@ -205,7 +283,7 @@ let CartQuantity = 0;
         <button class="btn btn-sm btn-danger" onclick="removeFromCart(${index})">Remove</button>
       </li>
     `;
-//  cart is empty alert
+//  cart alert
 
     if(cart.length === 0) {
   cartItems.innerHTML = "<p class='text-center fw-bold '>Cart is Empty</p>";
@@ -218,8 +296,7 @@ let CartQuantity = 0;
 
 
   document.getElementById("cartButton").innerHTML = `🛒 cart <span class="badge bg-danger">${CartQuantity}</span>
-`;
-}
+`;}
 
 //  Filter, Sort, Search
 function filterAndSort() {
@@ -231,6 +308,7 @@ function filterAndSort() {
   if (category !== "all") filtered = filtered.filter(p => p.category === category);
 
   // Search
+  
   const search = searchInput.value.toLowerCase();
   filtered = filtered.filter(p => p.name.toLowerCase().includes(search));
 

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Responsive Shop</title>
+  <title>Shop</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="style.css">
@@ -25,24 +25,79 @@
     </button>
     </div>
   </nav>
+
+  <!-- carousal for offer -->
+ <div id="offerCarousel" class="carousel slide container mt-3" data-ride="carousel">
+
+ 
+
+  <div class="carousel-inner rounded shadow">
+
+    <div class="carousel-item active" style="cursor:pointer;">
+      <img src="https://th.bing.com/th/id/R.dc2bc5792cc1429a6e49a88e8e30817e?rik=HP3%2fXlM5AalgDA&riu=http%3a%2f%2fgoldenhourbotanicals.com%2fcdn%2fshop%2fcollections%2fGoldenhour_Lifestyle_Collection_Hi-Res_008.jpg%3fv%3d1674253511&ehk=oTFncUQc282a8Bt8vDCX1z%2fqf1lCxrQddCWH%2bxjJRJQ%3d&risl=&pid=ImgRaw&r=0" class="d-block w-100">
+      <div class="carousel-caption d-none d-md-block">
+        <h3 class="offer-text">30% OFF BEAUTY PRODUCT COMBO</h3>
+     <button class="btn btn-warning mt-2" onclick="goToBeauty()">
+     Shop Now
+     </button>   
+        
+      </div>
+    </div>
+
+    <div class="carousel-item"  style="cursor:pointer;">
+      <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=1200&auto=format&fit=crop" class="d-block w-100">
+      <div class="carousel-caption d-none d-md-block">
+        <h3>Fashion Sale</h3>
+        <p>Flat 50% OFF</p>
+         <button class="btn btn-warning mt-2" onclick="goToFashion()">
+     Shop Now
+     </button>
+      </div>
+    </div>
+
+    <div class="carousel-item" style="cursor:pointer;">
+      <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=1200&auto=format&fit=crop" class="d-block w-100">
+      <div class="carousel-caption d-none d-md-block">
+        <h3>Books Collection</h3>
+        <p>Starting ₹199</p>
+         <button class="btn btn-warning mt-2" onclick="goToBooks()">
+     Shop Now
+     </button>
+      </div>
+    </div>
+
+  </div>
+  <a class="carousel-control-prev" href="#offerCarousel" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+
+  <a class="carousel-control-next" href="#offerCarousel" role="button" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+
+</div>
+
+
+  <!-- modal for cart-->
   
 
-  <div class="modal fade" id="cartModal" tabindex="-1"
-  data-keboard="false" data-backdrop="static"aria-labelledby="cartModalLabel" aria-hidden="true">
+<div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="cartModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
 
       <div class="modal-header">
         <h5 class="modal-title" id="cartModalLabel">Your Cart</h5>
-        <button type="button" class="btn-close" data-dismiss="modal" aria-label="close" data-bs-dismiss="modal"></button>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span>&times;</span>
+        </button>
       </div>
 
       <div class="modal-body">
         <ul id="cartItems" class="list-group"></ul>
         <p class="fw-bold mt-3">Total: ₹<span id="cartTotal">0</span></p>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-       
       </div>
+
     </div>
   </div>
 </div>

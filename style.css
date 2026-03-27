@@ -1,0 +1,28 @@
+.card-img-top {
+  height: 300px;   
+  object-fit: cover;   
+}
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color:lightgray;
+   
+}
+
+
+.card:hover {
+    transform: translateY(-10px);
+    
+    
+}
+
+
+.card h5, .card p {
+    text-align: center;
+}
+
+
+.card .btn-warning {
+    font-weight: bold;
+}
